@@ -1,13 +1,21 @@
-package com.simplilearn.ReviewAnalyzer;
+package com.simplilearn.ReviewAnalyser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ReviewAnalyzerApplication {
+public class ReviewAnalyserApplication {
+    public static double getWordCount(String review){
+        	int count = 0;
 
-	public static void main(String[] args) {
-		SpringApplication.run(ReviewAnalyzerApplication.class, args);
-	}
+            	String string[] = review.toLowerCase().split("([,.\\s]+)");
+            	for(String s : string){
+   	 	count++;
+            	}
+   	 return count;
+    }
+    public static void main(String[] args) {
+   	 SpringApplication.run(ReviewAnalyserApplication.class, args);
+    }
 
 }
